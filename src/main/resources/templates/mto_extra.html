@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mantenimiento Hora Extra</title>
+    <!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div >
+    <!--form class="form" role="form" autocomplete="off" th:object="${extraForm}"  th:action="@{/guardarExtra}" method="post"-->
+    <form class="form" role="form" autocomplete="off"  th:action="@{/guardarExtra}" method="post">
+        <h1>Hora Extra</h1>
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label form-control-label"  >Codigo del Empleado</label>
+            <div class="col-lg-9">
+                <input class="form-control" type="text" th:field="${extra.employeeId}">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label form-control-label">Mes a Procesar</label>
+            <div class="col-lg-9">
+                <!--input class="form-control" type="text"-->
+                <input class="form-control" type="text" th:field="${extraPK.mes}">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label form-control-label">Año a Procesar</label>
+            <div class="col-lg-9">
+                <!--input class="form-control" type="text" -->
+                <input class="form-control" type="text" th:field="${extraPK.anio}">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-3 col-form-label form-control-label">Tiempo Extra</label>
+            <div class="col-lg-9">
+                <input class="form-control" type="text" th:field="${extra.tiempoExtra}">
+                <!--input class="form-control" type="text"-->
+            </div>
+        </div>
+        <button type="submit" >Guardar</button>
+    </form>
+</div>
+
+</body>
+</html>
